@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="project">
+<head>
+  <title>Assignment</title>
+	<meta charset="utf-8" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="container" ng-controller="artistCtrl">
+    <div class="valign-wrapper" ng-show="searchBtn">
+      <a class="waves-effect waves-light btn center-align" ng-click="openModal()">Search for artist</a>
+    </div>
+    <div class="row margin-top" ng-show="tabs">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a class="active" href="#test1"  ng-click="addClass(0)">{{data[0].artistName}}</a></li>
+          <li class="tab col s3"><a href="#test2" ng-click="addClass(1)">{{data[1].artistName}}</a></li>
+          <li class="tab col s3"><a href="#test3" ng-click="addClass(2)">{{data[2].artistName}}</a></li>
+          <li class="tab col s3"><a href="#test4" ng-click="addClass(3)">{{data[3].artistName}}</a></li>
+        </ul>
+      </div>
+      <div id="test{{$index + 1}}" class="col s12" ng-repeat="d in data">
+        <center>
+          <img ng-src="{{d.artworkUrl100}}" />
+          <p class="p1">{{d.artistName}}</p>
+          <p>{{d.trackName}}</p>
+        </center>
+      </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Search for album</h4>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="first_name" type="text" class="validate" ng-model="artist.name">
+            <label for="first_name">Track Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="last_name" type="number" class="validate" ng-model="artist.limit">
+            <label for="last_name">No. of Tracks</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-action waves-effect waves-green btn-flat" ng-click="getArtist(artist)">SUBMIT</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('.modal').modal();
+    });
+  </script>
+</body>
+</html>

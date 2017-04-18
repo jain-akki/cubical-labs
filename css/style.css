@@ -1,0 +1,23 @@
+body .valign-wrapper {
+  height: 100vh; }
+  body .valign-wrapper a {
+    margin: 0px auto; }
+body .display-none {
+  display: none !important; }
+body .indicator {
+  right: 709px;
+  left: 0px; }
+body .margin-top {
+  margin-top: 20vh; }
+  body .margin-top img {
+    margin: 30px 0px 10px 0px;
+    width: 100px; }
+  body .margin-top .p1 {
+    font-size: 20px;
+    font-weight: bolder; }
+  body .margin-top #test1 {
+    display: block; }
+  body .margin-top #test2, body .margin-top #test3, body .margin-top #test4 {
+    display: none; }
+
+/*# sourceMappingURL=style.css.map */
