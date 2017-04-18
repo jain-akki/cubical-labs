@@ -1,4 +1,4 @@
-# Instruction needs to be follow before you open this project in your browser
+# Instruction needs to be followed before you open this project in your browser
 
   - Go to chrome or mozilla addon page
   - Add a plugin called CORS (This helps you made Cross-Origin-Request in your browser)
